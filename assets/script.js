@@ -3,27 +3,32 @@
 var timer = 30;
 var questionBank = [
     {
-    Question:  "Variables are made up of:",
-    Answer: ["a vowel and consonant", "an object and a location", "a name and a value"],
+    question:  "Variables are made up of:",
+    answer: ["a vowel and consonant", "an object and a location", "a name and a value"],
     correctAnswer: "a name and a value",
     }, 
 
     {
-    Question:  "Which method displays data in the browser's console?",
-    Answer: ["alert", "console.log", "window.print"],
+    question:  "Which method displays data in the browser's console?",
+    answer: ["alert", "console.log", "window.print"],
     correctAnswer: "console.log",
     }, 
 
     {
-    Question:  "What is the index of grapes in the following array: [oranges, grapes, apples]",
-    Answer: ["1", "2", "3"],
+    question:  "What is the index of grapes in the following array: [oranges, grapes, apples]",
+    answer: ["1", "2", "3"],
     correctAnswer: "1",
         } 
 
 ]
 
 function addContent() {
-    $("#quizContent").text("My Quiz");
+    // $("#quizContent").text("My Quiz");
+    // for (i = 0; i < questionBank.length; i++) {
+
+    // }
+    $("#quizContent").text(questionBank[0].question);
+    $("#answerContent").text("answer 1");
 }
 
 // This event listens for users clicking the Start Quiz button.
