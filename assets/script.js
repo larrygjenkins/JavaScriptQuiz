@@ -13,8 +13,13 @@ $(".startBtn").on("click", function(){
     function startCountdown() {
        $("#counter").text(timer);
        timer--;
+
+       // Stops timer at 0
+
+       if(timer === 0) {
+        clearInterval(countdown);
       }
 
     addContent();
 
-})
+}})
