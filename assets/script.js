@@ -26,16 +26,17 @@ function addContent() {
     $("#quizContent").text("My Quiz");
 }
 
+// This event listens for users clicking the Start Quiz button.
 $(".startBtn").on("click", function(){
     console.log("The button works");
     var countdown = setInterval(startCountdown, 1000);
 
+    // This function starts the quiz timer. 
     function startCountdown() {
        $("#counter").text(timer);
        timer--;
 
        // Stops timer at 0
-
        if(timer === 0) {
         clearInterval(countdown);
       }
