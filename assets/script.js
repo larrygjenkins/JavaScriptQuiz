@@ -1,9 +1,9 @@
-var startBtn = document.querySelector("#startBtn");
+// var startBtn = document.querySelector("#startBtn");
 
 
 
 
 
-
-
-console.log("Did this work?");
+$(".startBtn").on("click", function(){
+    console.log("The button works");
+})
