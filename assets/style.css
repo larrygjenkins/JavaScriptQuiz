@@ -3,3 +3,12 @@ h1 {
     margin: auto;
     background-color: aquamarine;
 }
+
+#quizContent {
+    font-size: large;
+    font-weight: bold;
+}
+
+#timer {
+    font-weight: bold;
+}
