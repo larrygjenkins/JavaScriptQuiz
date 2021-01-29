@@ -9,6 +9,7 @@ var questionCount = 0;
 var timer = 30;
 var questionCount = 0;
 var currentScore = 0;
+var quizActive = false;
 
 var questionBank = [
     {
@@ -31,13 +32,14 @@ var questionBank = [
 
 ]
 
-function addContent() {
-    // $("#quizContent").text("My Quiz");
-    // for (i = 0; i < questionBank.length; i++) {
+//This function adds the first question to the quiz.
 
-    // }
+function addContent() {
+   
+    //This selector adds the text of the question.
     $("#questionContent").text(questionBank[questionCount].question);
 
+    //This for loop adds the buttons and text of each question choice. It also adds the class of "choice" for each button.
     for (i = 0; i < questionBank[questionCount].answer.length; i++) {
         var button = $("<button>");
         button.text(questionBank[questionCount].answer[i]);
@@ -82,8 +84,9 @@ $(document).on("click", ".choice", function (){
 
     if (choiceValue === questionBank[questionCount].correctAnswer){
         console.log("Yes!");
+        $("#validation").text("Correct!");
     } else {
-        console.log("No!");
+        $("#validation").text("No, sorry.");;
     }
     
     questionCount++;
