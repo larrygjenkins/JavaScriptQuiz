@@ -31,7 +31,7 @@ var questionBank = [
 
 ]
 
-//This function adds the first question to the quiz.
+//This function displays the quiz questions.
 function addContent() {
    
     if ((questionCount < questionBank.length) || (timer > 0)) {
@@ -50,6 +50,8 @@ function addContent() {
 
     else {
         $("#questionContent").text("The quiz is done!");
+        $("#questionContent").addClass("done");
+        $(".resetQuiz").addClass("visible");
     }
 
 }
