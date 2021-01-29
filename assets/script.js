@@ -57,7 +57,6 @@ function checkAnswer() {
 
 // This event listens for users clicking the Start Quiz button.
 $(".startBtn").on("click", function(){
-    console.log("The button works");
     var countdown = setInterval(startCountdown, 1000);
 
     // This function starts the quiz timer. 
@@ -83,10 +82,12 @@ $(document).on("click", ".choice", function (){
 
 
     if (choiceValue === questionBank[questionCount].correctAnswer){
-        console.log("Yes!");
         $("#validation").text("Correct!");
+        currentScore++;
+        console.log("current score: " + currentScore);
     } else {
-        $("#validation").text("No, sorry.");;
+        $("#validation").text("Sorry. That is wrong.");
+        timer = timer - 5;
     }
     
     questionCount++;
