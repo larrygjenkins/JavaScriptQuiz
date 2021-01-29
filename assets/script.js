@@ -33,7 +33,6 @@ var questionBank = [
 ]
 
 //This function adds the first question to the quiz.
-
 function addContent() {
    
     //This selector adds the text of the question.
@@ -50,11 +49,6 @@ function addContent() {
     }
 }
 
-function checkAnswer() {
-    console.log(choiceValue);
-    console.log(questionCount);
-}
-
 // This event listens for users clicking the Start Quiz button.
 $(".startBtn").on("click", function(){
     var countdown = setInterval(startCountdown, 1000);
@@ -69,30 +63,31 @@ $(".startBtn").on("click", function(){
       }
       timer--;
     }
+    //Then we call the function to add the first test question. 
     addContent();
 })
 
 
-
+//this section listens for the user to click on a "choice" button when answering a question
 $(document).on("click", ".choice", function (){
     var choiceValue = $(this).val();
     
     console.log("Choice: " + choiceValue);
     console.log("Question Count: " + questionCount);
 
-
+    //if the user answers correctly, they see a validation message that it is correct and they receive 1 point.
     if (choiceValue === questionBank[questionCount].correctAnswer){
         $("#validation").text("Correct!");
         currentScore++;
         console.log("current score: " + currentScore);
-    } else {
+    } 
+    
+    //if the user answers incorrectly, they see "wrong" validation and lose 5 seconds from timer.
+    else {
         $("#validation").text("Sorry. That is wrong.");
         timer = timer - 5;
     }
-    
+    //This updates the internal question count (the number of questions asked) by 1
     questionCount++;
-  
-
-}
-)
+})
 });
