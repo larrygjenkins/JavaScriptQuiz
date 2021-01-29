@@ -5,7 +5,7 @@
 
 $(document).ready(function() {
 
-var questionCount = 0;    
+var questionCount = 1;    
 var timer = 15;
 var questionCount = 0;
 var currentScore = 0;
@@ -28,7 +28,6 @@ var questionBank = [
     answer: ["1", "2", "3"],
     correctAnswer: "1",
     } 
-
 ]
 
 //This function displays the quiz questions.
