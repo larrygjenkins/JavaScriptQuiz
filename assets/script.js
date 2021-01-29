@@ -90,29 +90,13 @@ $(document).on("click", ".choice", function (){
     }
     //This updates the internal question count (the number of questions asked) by 1
     questionCount++;
-    //clearQuestion();
-    nextQuestion();
+    clearQuestion();
 })
 
-// function clearQuestion() {
-//     $("#questionContent").text("");
-
-// }
-
-function nextQuestion() {
-   
-    //This selector adds the text of the question.
-    $("#questionContent").replaceWith(questionBank[questionCount].question);
-
-    //This for loop adds the buttons and text of each question choice. It also adds the class of "choice" for each button.
-    for (i = 0; i < questionBank[questionCount].answer.length; i++) {
-        var button = $("<button>");
-        button.text(questionBank[questionCount].answer[i]);
-        button.addClass("choice");
-        button.val(questionBank[questionCount].answer[i])
-        $("#answerContent").append(button);
-
-    }
+function clearQuestion() {
+     $("#questionContent").text("");
+     $("#answerContent").text("");
+     addContent();
 }
 
 
