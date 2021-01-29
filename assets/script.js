@@ -68,11 +68,12 @@ $(".startBtn").on("click", function(){
        if(timer === 0) {
         clearInterval(countdown);
 
-        //This removes all question/choice content when timer reaches 0 and adds the Quiz Done message.
+        //This removes all question/choice content when timer reaches 0 and adds the Quiz Done message. Try Again button also displays after timer reaches 0.
         $("#questionContent").text("The quiz is done!");
         $("#questionContent").addClass("done");
         $("#answerContent").text("");
         $("#validation").text(""); 
+        $(".resetQuiz").addClass("visible");
       }
       
       //This begins the timer decrementing by 1 second. 
@@ -105,7 +106,13 @@ $(document).on("click", ".choice", function (){
     //if the user answers incorrectly, they see "wrong" validation and lose 5 seconds from timer.
     else {
         $("#validation").text("Sorry. That is wrong.");
-        timer = timer - 5;
+            if (timer >= 5) {
+                timer = timer - 5;
+            }
+            else {
+                timer = 0;
+            }
+        
     }
     //This updates the internal question count (the number of questions asked) by 1
     questionCount++;
