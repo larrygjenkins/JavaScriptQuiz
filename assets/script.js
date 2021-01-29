@@ -79,6 +79,7 @@ $(document).on("click", ".choice", function (){
     if (choiceValue === questionBank[questionCount].correctAnswer){
         $("#validation").text("Correct!");
         currentScore++;
+        $("#score").text(currentScore);
         console.log("current score: " + currentScore);
     } 
     
