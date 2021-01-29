@@ -6,10 +6,9 @@
 $(document).ready(function() {
 
 var questionCount = 0;    
-var timer = 30;
+var timer = 15;
 var questionCount = 0;
 var currentScore = 0;
-var quizActive = false;
 
 var questionBank = [
     {
@@ -35,18 +34,24 @@ var questionBank = [
 //This function adds the first question to the quiz.
 function addContent() {
    
+    if ((questionCount < questionBank.length) || (timer > 0)) {
     //This selector adds the text of the question.
     $("#questionContent").text(questionBank[questionCount].question);
 
     //This for loop adds the buttons and text of each question choice. It also adds the class of "choice" for each button.
-    for (i = 0; i < questionBank[questionCount].answer.length; i++) {
-        var button = $("<button>");
-        button.text(questionBank[questionCount].answer[i]);
-        button.addClass("choice");
-        button.val(questionBank[questionCount].answer[i])
-        $("#answerContent").append(button);
-
+        for (i = 0; i < questionBank[questionCount].answer.length; i++) {
+            var button = $("<button>");
+            button.text(questionBank[questionCount].answer[i]);
+            button.addClass("choice");
+            button.val(questionBank[questionCount].answer[i])
+            $("#answerContent").append(button);
+        }
     }
+
+    else {
+        $("#questionContent").text("The quiz is done!");
+    }
+
 }
 
 // This event listens for users clicking the Start Quiz button.
@@ -60,8 +65,20 @@ $(".startBtn").on("click", function(){
        // Stops timer at 0
        if(timer === 0) {
         clearInterval(countdown);
+
+        //This removes all question/choice content when timer reaches 0 and adds the Quiz Done message.
+        $("#questionContent").text("The quiz is done!");
+        $("#questionContent").addClass("done");
+        $("#answerContent").text("");
+        $("#validation").text(""); 
       }
+      
+      //This begins the timer decrementing by 1 second. 
       timer--;
+
+      //This hides the Start Quiz button once quiz has begun.
+      $(".startBtn").addClass("hidden");
+
     }
     //Then we call the function to add the first test question. 
     addContent();
@@ -93,6 +110,7 @@ $(document).on("click", ".choice", function (){
     clearQuestion();
 })
 
+//This function clears the question and choices associated with the previous question before adding new content. 
 function clearQuestion() {
      $("#questionContent").text("");
      $("#answerContent").text("");

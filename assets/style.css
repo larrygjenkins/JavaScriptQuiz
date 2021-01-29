@@ -23,3 +23,28 @@ button {
     font-weight: bold;
     background-color: aquamarine;
 }
+
+.done {
+    text-align: center;
+    font-size:larger;
+    font-weight: bold;
+    background-color: peru;
+}
+
+/* These next two attributes set the starting valudes for the Start and Reset buttons.  */
+.resetQuiz {
+    visibility: hidden;
+}
+
+.startBtn {
+    visibility: visible;
+}
+
+/* These next two attributes are associated with a class. When the quiz starts, the Start button will be given the hidden class to change its visibility. */
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
