@@ -12,3 +12,7 @@ h1 {
 #timer {
     font-weight: bold;
 }
+
+button {
+    margin: 5px;
+}
