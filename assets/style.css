@@ -16,3 +16,10 @@ h1 {
 button {
     margin: 5px;
 }
+
+#validation {
+    text-align: center;
+    font-size:larger;
+    font-weight: bold;
+    background-color: aquamarine;
+}
