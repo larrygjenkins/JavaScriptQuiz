@@ -7,6 +7,9 @@ $(document).ready(function() {
 
 var questionCount = 0;    
 var timer = 30;
+var questionCount = 0;
+var currentScore = 0;
+
 var questionBank = [
     {
     question:  "Variables are made up of:",
@@ -45,6 +48,11 @@ function addContent() {
     }
 }
 
+function checkAnswer() {
+    console.log(choiceValue);
+    console.log(questionCount);
+}
+
 // This event listens for users clicking the Start Quiz button.
 $(".startBtn").on("click", function(){
     console.log("The button works");
@@ -63,10 +71,24 @@ $(".startBtn").on("click", function(){
     addContent();
 })
 
+
+
 $(document).on("click", ".choice", function (){
     var choiceValue = $(this).val();
-    console.log(choiceValue);
+    
+    console.log("Choice: " + choiceValue);
+    console.log("Question Count: " + questionCount);
+
+
+    if (choiceValue === questionBank[questionCount].correctAnswer){
+        console.log("Yes!");
+    } else {
+        console.log("No!");
+    }
+    
     questionCount++;
+  
+
 }
 )
 });
