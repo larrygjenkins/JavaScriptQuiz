@@ -31,13 +31,17 @@ button {
     background-color: peru;
 }
 
-/* These next two attributes set the starting display values for the Start and Reset buttons.  */
+/* These next three attributes set the starting display values for the Start and Reset buttons.  */
 .resetQuiz {
     display: none;
 }
 
 .startBtn {
     display: inline;
+}
+
+.highScoreHistory {
+    display: none;
 }
 
 /* These next two attributes are associated with a class. When the quiz starts, the Start button will be given the hidden class to change its display value. When the quiz ends, the display value for the Restart button will change. */

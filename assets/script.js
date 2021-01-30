@@ -52,6 +52,7 @@ function addContent() {
         $("#questionContent").text("The quiz is done!");
         $("#questionContent").addClass("done");
         $(".resetQuiz").addClass("visible").removeClass("hidden");
+        $(".highScoreHistory").addClass("visible").removeClass("hidden");
         timer = 0;
     }
 
@@ -75,6 +76,7 @@ $(".startBtn").on("click", function(){
         $("#answerContent").text("");
         $("#validation").text(""); 
         $(".resetQuiz").addClass("visible").removeClass("hidden");
+        $(".highScoreHistory").addClass("visible").removeClass("hidden");
         $(".startBtn").addClass("hidden").removeClass("visible");
       }
       
@@ -130,6 +132,7 @@ function clearQuestion() {
 
 $(".resetQuiz").on("click", function(){   
     $(".resetQuiz").addClass("hidden").removeClass("visible");
+    $(".highScoreHistory").addClass("hidden").removeClass("visible");
     $(".startBtn").addClass("visible").removeClass("hidden");
     $("#questionContent").removeClass("done");
     $("#questionContent").text("");
