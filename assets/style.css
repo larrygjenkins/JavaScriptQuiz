@@ -1,54 +1,55 @@
 h1 {
-    text-align: center;
-    margin: auto;
-    background-color: aquamarine;
+	text-align: center;
+	margin: auto;
+	background-color: aquamarine;
 }
 
 #quizContent {
-    font-size: large;
-    font-weight: bold;
+	font-size: large;
+	font-weight: bold;
 }
 
-#timer, #userScore {
-    font-weight: bold;
+#timer,
+#userScore {
+	font-weight: bold;
 }
 
 button {
-    margin: 5px;
+	margin: 5px;
 }
 
 #validation {
-    text-align: center;
-    font-size:larger;
-    font-weight: bold;
-    background-color: aquamarine;
+	text-align: center;
+	font-size: larger;
+	font-weight: bold;
+	background-color: aquamarine;
 }
 
 .done {
-    text-align: center;
-    font-size:larger;
-    font-weight: bold;
-    background-color: peru;
+	text-align: center;
+	font-size: larger;
+	font-weight: bold;
+	background-color: peru;
 }
 
 /* These next three attributes set the starting display values for the Start and Reset buttons.  */
 .resetQuiz {
-    display: none;
+	display: none;
 }
 
 .startBtn {
-    display: inline;
+	display: inline;
 }
 
 .highScoreHistory {
-    display: none;
+	display: none;
 }
 
 /* These next two attributes are associated with a class. When the quiz starts, the Start button will be given the hidden class to change its display value. When the quiz ends, the display value for the Restart button will change. */
 .hidden {
-    display: none;
+	display: none;
 }
 
 .visible {
-    display: inline;
+	display: inline;
 }
