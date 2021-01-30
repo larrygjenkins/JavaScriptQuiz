@@ -42,7 +42,8 @@ function addContent() {
         for (i = 0; i < questionBank[questionCount].answer.length; i++) {
             var button = $("<button>");
             button.text(questionBank[questionCount].answer[i]);
-            button.addClass("choice");
+            button.addClass("choice btn btn-secondary");
+            // button.addClass("btn btn-secondary");
             button.val(questionBank[questionCount].answer[i])
             $("#answerContent").append(button);
         }
