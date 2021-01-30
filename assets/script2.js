@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+var questionCount = 1;    
 var timer = 15;
 var questionCount = 0;
 var currentScore = 0;
@@ -24,17 +25,23 @@ var questionBank = [
     } 
 ]
 
-var highScores = [
-    {
-        initials: "LJ",
-        highScore: "3"
+function quizDone () {
+    if ((questionCount < questionBank.length) || (timer > 0)) {
+        addContent();
     }
-]
 
+    else {
+        //This removes all question/choice content when timer reaches 0 and adds the Quiz Done message. Try Again button also displays after timer reaches 0.
+        $("#questionContent").text("The quiz is done!");
+        $("#questionContent").addClass("done");
+        $("#answerContent").text("");
+        $("#validation").text(""); 
+        $(".resetQuiz").addClass("visible");
+    }
+}
 //This function displays the quiz questions.
 function addContent() {
-   
-    if ((questionCount < questionBank.length) && (timer > 0)) {
+
     //This selector adds the text of the question.
     $("#questionContent").text(questionBank[questionCount].question);
 
@@ -46,16 +53,7 @@ function addContent() {
             button.val(questionBank[questionCount].answer[i])
             $("#answerContent").append(button);
         }
-    }
-
-    else {
-        $("#questionContent").text("The quiz is done!");
-        $("#questionContent").addClass("done");
-        $(".resetQuiz").addClass("visible").removeClass("hidden");
-        timer = 0;
-    }
-
-}
+   }
 
 // This event listens for users clicking the Start Quiz button.
 $(".startBtn").on("click", function(){
@@ -66,23 +64,16 @@ $(".startBtn").on("click", function(){
        $("#counter").text(timer);
        
        // Stops timer at 0
-       if(timer <= 0) {
+       if(timer === 0) {
         clearInterval(countdown);
-
-        //This removes all question/choice content when timer reaches 0 and adds the Quiz Done message. Try Again button also displays after timer reaches 0.
-        $("#questionContent").text("The quiz is done!");
-        $("#questionContent").addClass("done");
-        $("#answerContent").text("");
-        $("#validation").text(""); 
-        $(".resetQuiz").addClass("visible").removeClass("hidden");
-        $(".startBtn").addClass("hidden").removeClass("visible");
+        quizDone();        
       }
       
       //This begins the timer decrementing by 1 second. 
       timer--;
 
       //This hides the Start Quiz button once quiz has begun.
-      $(".startBtn").addClass("hidden").removeClass("visible");
+      $(".startBtn").addClass("hidden");
 
     }
     //Then we call the function to add the first test question. 
@@ -95,6 +86,7 @@ $(document).on("click", ".choice", function (){
     var choiceValue = $(this).val();
     
     console.log("Choice: " + choiceValue);
+    console.log("Question Count: " + questionCount);
 
     //if the user answers correctly, they see a validation message that it is correct and they receive 1 point.
     if (choiceValue === questionBank[questionCount].correctAnswer){
@@ -117,7 +109,6 @@ $(document).on("click", ".choice", function (){
     }
     //This updates the internal question count (the number of questions asked) by 1
     questionCount++;
-    console.log("Question Count: " + questionCount);
     clearQuestion();
 })
 
@@ -125,30 +116,16 @@ $(document).on("click", ".choice", function (){
 function clearQuestion() {
      $("#questionContent").text("");
      $("#answerContent").text("");
-     addContent();
+     quizDone();
 }
 
-$(".resetQuiz").on("click", function(){   
-    $(".resetQuiz").addClass("hidden").removeClass("visible");
-    $(".startBtn").addClass("visible").removeClass("hidden");
-    $("#questionContent").removeClass("done");
-    $("#questionContent").text("");
-    $("#answerContent").text("");
-    timer = 15;
-    questionCount = 0;
-    currentScore = 0;
-    $("#counter").text(timer);
-    $("#score").text(currentScore);
- })
-
-function endQuiz() {
-     //Assumes we have obtained initials from user and storing intials and score in an object; and then pushing to the high scores Array
-
-     localStorage.setItem("highScores", JSON.stringify(highScores));
+$(".resetQuiz").on("click", function(){
+   
+   
+   $(".resetQuiz").addClass("hidden");
+   $(".startBtn").addClass("visible");
 
 }
-    endQuiz();
-    var test = JSON.parse(localStorage.getItem("highScores"));
-    console.log(test);
+)
 
 });
