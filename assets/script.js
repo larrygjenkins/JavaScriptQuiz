@@ -24,12 +24,7 @@ var questionBank = [
     } 
 ]
 
-var highScores = [
-    {
-        initials: "LJ",
-        score: "3"
-    }
-]
+var highScores = []
 
 //This function displays the quiz questions.
 function addContent() {
