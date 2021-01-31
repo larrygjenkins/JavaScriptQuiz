@@ -27,7 +27,7 @@ var questionBank = [
 var highScores = [
     {
         initials: "LJ",
-        highScore: "3"
+        score: "3"
     }
 ]
 
@@ -145,14 +145,33 @@ $(".resetQuiz").on("click", function(){
     $("#score").text(currentScore);
  })
 
-function endQuiz() {
-     //Assumes we have obtained initials from user and storing intials and score in an object; and then pushing to the high scores Array
+// function enterInitials() {
+    
+//     console.log(userInitials.text);
+// }
 
-     localStorage.setItem("highScores", JSON.stringify(highScores));
+//When the user clicks the Submit button for intials, this event listener takes the current score and user inputed intials and adds them to the current array of high scores. 
+$(".submitInitials").on("click", function(event){
+    event.preventDefault();
+    
+    //first variable identifies initials by element id; second variable takes current score and converts it to a string
+    var userInitials = document.getElementById("userInitials");
+    var newScore = currentScore.toString();
 
-}
-    endQuiz();
-    var test = JSON.parse(localStorage.getItem("highScores"));
-    console.log(test);
+    //this creates the newScore variable, which is the object that will be pushed into the highScores array.
+    var newScore = {"initials": userInitials.value, "score": newScore};
+    highScores.push(newScore);
+    console.log(highScores);
+})
 
-});
+// function endQuiz() {
+//      //Assumes we have obtained initials from user and storing intials and score in an object; and then pushing to the high scores Array
+
+//      localStorage.setItem("highScores", JSON.stringify(highScores));
+
+// }
+//     endQuiz();
+//     var test = JSON.parse(localStorage.getItem("highScores"));
+//     console.log(test);
+
+ });
