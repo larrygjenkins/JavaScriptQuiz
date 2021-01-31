@@ -52,8 +52,7 @@ $(document).ready(function() {
         else {
             $("#questionContent").text("The quiz is done! You scored " + currentScore + " points.");
             $("#questionContent").addClass("done");
-            $(".resetQuiz").addClass("visible").removeClass("hidden");
-            $(".highScoreHistory").addClass("visible").removeClass("hidden");
+            enterInitials();
             timer = 0;
         }
     
@@ -76,9 +75,8 @@ $(document).ready(function() {
             $("#questionContent").addClass("done");
             $("#answerContent").text("");
             $("#validation").text(""); 
-            $(".resetQuiz").addClass("visible").removeClass("hidden");
-            $(".highScoreHistory").addClass("visible").removeClass("hidden");
             $(".startBtn").addClass("hidden").removeClass("visible");
+            enterInitials();
           }
           
           //This begins the timer decrementing by 1 second. 
@@ -146,24 +144,26 @@ $(document).ready(function() {
      })
     
     function enterInitials() {
-        $(".playerInitials")
+        $(".userInput").addClass("visible").removeClass("hidden");
     }
     
     //This event listener saves the user's intials and score to local storage, hides the input form, and displays Retry and High Scores buttons.
     $(".playerInitials").on("click", function(){
+        console.log("user initials");
         $(".userInput").addClass("hidden").removeClass("visible");
-        $(".resetQuiz").addClass("visible").removeClass("hidden");
-        $(".highScoreHistory").addClass("visible").removeClass("hidden");
+        // $(".startBtn").addClass("hidden").removeClass("visible");
+        // $(".resetQuiz").addClass("visible").removeClass("hidden");
+        // $(".highScoreHistory").addClass("visible").removeClass("hidden");
     })
 
     function endQuiz() {
-         //Assumes we have obtained initials from user and storing intials and score in an object; and then pushing to the high scores Array
+          //Assumes we have obtained initials from user and storing intials and score in an object; and then pushing to the high scores Array
     
-         localStorage.setItem("highScores", JSON.stringify(highScores));
+          localStorage.setItem("highScores", JSON.stringify(highScores));
     
     }
-        endQuiz();
-        var test = JSON.parse(localStorage.getItem("highScores"));
-        console.log(test);
+         endQuiz();
+         var test = JSON.parse(localStorage.getItem("highScores"));
+         console.log(test);
     
     });    
