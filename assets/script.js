@@ -47,8 +47,7 @@ function addContent() {
     else {
         $("#questionContent").text("The quiz is done! You scored " + currentScore + " points.");
         $("#questionContent").addClass("done");
-        $(".resetQuiz").addClass("visible").removeClass("hidden");
-        $(".highScoreHistory").addClass("visible").removeClass("hidden");
+        $("#userForm").addClass("visible").removeClass("hidden");
         timer = 0;
     }
 
@@ -71,9 +70,8 @@ $(".startBtn").on("click", function(){
         $("#questionContent").addClass("done");
         $("#answerContent").text("");
         $("#validation").text(""); 
-        $(".resetQuiz").addClass("visible").removeClass("hidden");
-        $(".highScoreHistory").addClass("visible").removeClass("hidden");
         $(".startBtn").addClass("hidden").removeClass("visible");
+        $("#userForm").addClass("visible").removeClass("hidden");
       }
       
       //This begins the timer decrementing by 1 second. 
@@ -157,6 +155,12 @@ $(".submitInitials").on("click", function(event){
     var newScore = {"initials": userInitials.value, "score": newScore};
     highScores.push(newScore);
     console.log(highScores);
+
+    $(".resetQuiz").addClass("visible").removeClass("hidden");
+    $(".highScoreHistory").addClass("visible").removeClass("hidden");
+    $(".startBtn").addClass("hidden").removeClass("visible");
+    $("#userForm").addClass("hidden").removeClass("visible");
+
 })
 
 // function endQuiz() {
