@@ -131,6 +131,8 @@ $(".resetQuiz").on("click", function(){
     $(".resetQuiz").addClass("hidden").removeClass("visible");
     $(".highScoreHistory").addClass("hidden").removeClass("visible");
     $(".startBtn").addClass("visible").removeClass("hidden");
+    $("#highScoresBox").addClass("hidden").removeClass("visible");
+    
     $("#questionContent").removeClass("done");
     $("#questionContent").text("");
     $("#answerContent").text("");
@@ -168,9 +170,16 @@ $(".submitInitials").on("click", function(event){
     $("#userInitials").val("");
 })
 
+    //This event listener dislays the high score history when view high scores button is clicked and hides the view high scores button.
     $(".highScoreHistory").on("click", function(){
         $("#highScoresBox").addClass("visible").removeClass("hidden");
         $(".highScoreHistory").addClass("hidden").removeClass("visible");
+    })
+
+    //This event listener hides the high scores history when the Hide Scores button is clicked and returns View High Scores button to view.
+    $(".hideScores").on("click", function(){
+         $("#highScoresBox").addClass("hidden").removeClass("visible");
+         $(".highScoreHistory").addClass("visible").removeClass("hidden");
     })
 
 // function endQuiz() {
