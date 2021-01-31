@@ -160,6 +160,10 @@ $(".submitInitials").on("click", function(event){
     highScores.push(newScore);
     console.log(highScores);
 
+    $("#questionContent").removeClass("done");
+    $("#questionContent").text("");
+    $("#answerContent").text("");
+    $("#answerContent").removeClass("done");
     $(".resetQuiz").addClass("visible").removeClass("hidden");
     $(".highScoreHistory").addClass("visible").removeClass("hidden");
     $(".startBtn").addClass("hidden").removeClass("visible");
