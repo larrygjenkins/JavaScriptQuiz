@@ -170,6 +170,7 @@ $(".submitInitials").on("click", function(event){
 
     $(".highScoreHistory").on("click", function(){
         $("#highScoresBox").addClass("visible").removeClass("hidden");
+        $(".highScoreHistory").addClass("hidden").removeClass("visible");
     })
 
 // function endQuiz() {
