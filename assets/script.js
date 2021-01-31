@@ -168,6 +168,10 @@ $(".submitInitials").on("click", function(event){
     $("#userInitials").val("");
 })
 
+    $(".highScoreHistory").on("click", function(){
+        $("#highScoresBox").addClass("visible").removeClass("hidden");
+    })
+
 // function endQuiz() {
 //      //Assumes we have obtained initials from user and storing intials and score in an object; and then pushing to the high scores Array
 
