@@ -169,6 +169,8 @@ $(".submitInitials").on("click", function(event){
     $(".startBtn").addClass("hidden").removeClass("visible");
     $("#userForm").addClass("hidden").removeClass("visible");
 
+    //This selector sets the value of the user intials field to a blank string so repeat users have a blank field to work with.
+    $("#userInitials").val("");
 })
 
 // function endQuiz() {
