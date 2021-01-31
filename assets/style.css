@@ -32,10 +32,6 @@ button {
 	background-color: peru;
 }
 
-#highScoresList {
-	background-color: burlywood;
-}
-
 /* These next three attributes set the starting display values for the Start, Reset, & View High Scores buttons.  */
 .resetQuiz {
 	display: none;
