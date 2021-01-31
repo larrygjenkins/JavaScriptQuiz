@@ -32,7 +32,7 @@ button {
 	background-color: peru;
 }
 
-/* These next three attributes set the starting display values for the Start and Reset buttons.  */
+/* These next three attributes set the starting display values for the Start, Reset, & View High Scores buttons.  */
 .resetQuiz {
 	display: none;
 }
@@ -42,6 +42,10 @@ button {
 }
 
 .highScoreHistory {
+	display: none;
+}
+
+.userInput {
 	display: none;
 }
 

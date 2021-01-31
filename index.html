@@ -36,24 +36,20 @@
             </article>
         </section>
 
-        <section class="row" id="userInitials">
-            <article class="col-md-3">
-                <form>
-                    <div class="mb-3">
-                    <label for="userInputInitials" class="form-label">Enter your initials</label>
-                    <input type="text" class="form-control" aria-describedby="emailHelp">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </article>
-        </section>
-
         <br>
+
+        <form class="userInput" id="InitialsInput">
+            <div class="mb-3">
+              <label for="userIntials" class="form-label">Enter your initials</label>
+              <input type="text" class="form-control" id="userInitials">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
 
         <button class="startBtn btn btn-primary">Start Quiz</button>
         <button class="resetQuiz btn btn-primary">Try Again</button>
         <button class="highScoreHistory btn btn-secondary">View High Scores</button>
-
+       
         <br>
         <section class="row">
             <article id="feedback">

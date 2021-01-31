@@ -50,7 +50,7 @@ function addContent() {
     }
 
     else {
-        $("#questionContent").text("The quiz is done!");
+        $("#questionContent").text("The quiz is done! You scored " + currentScore + " points.");
         $("#questionContent").addClass("done");
         $(".resetQuiz").addClass("visible").removeClass("hidden");
         $(".highScoreHistory").addClass("visible").removeClass("hidden");
@@ -72,7 +72,7 @@ $(".startBtn").on("click", function(){
         clearInterval(countdown);
 
         //This removes all question/choice content when timer reaches 0 and adds the Quiz Done message. Try Again button also displays after timer reaches 0.
-        $("#questionContent").text("The quiz is done!");
+        $("#questionContent").text("The quiz is done! You scored " + currentScore + " points.");
         $("#questionContent").addClass("done");
         $("#answerContent").text("");
         $("#validation").text(""); 
