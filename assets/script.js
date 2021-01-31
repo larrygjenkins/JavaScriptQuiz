@@ -132,6 +132,7 @@ $(".resetQuiz").on("click", function(){
     $(".highScoreHistory").addClass("hidden").removeClass("visible");
     $(".startBtn").addClass("visible").removeClass("hidden");
     $("#highScoresBox").addClass("hidden").removeClass("visible");
+    $("#scoresList").empty();
 
     $("#questionContent").removeClass("done");
     $("#questionContent").text("");
@@ -175,16 +176,17 @@ $(".submitInitials").on("click", function(event){
         $("#highScoresBox").addClass("visible").removeClass("hidden");
         $(".highScoreHistory").addClass("hidden").removeClass("visible");
         
+        //This for loop adds a list item for each initials/score pair in the high scores array.
         for (i = 0; i < highScores.length; i++) {
-            // document.getElementById("scoresList").innerHTML = 
             $("#scoresList").append("<li>" + highScores[i].initials + ": " + highScores[i].score + " points");
         }
     })
 
-    //This event listener hides the high scores history when the Hide Scores button is clicked and returns View High Scores button to view.
+    //This event listener hides the high scores history when the Hide Scores button is clicked and returns View High Scores button to view. It also empties the ul so the list items are recreated upon clicking the View High scores button. This prevents duplicate lists from repeating.
     $(".hideScores").on("click", function(){
          $("#highScoresBox").addClass("hidden").removeClass("visible");
          $(".highScoreHistory").addClass("visible").removeClass("hidden");
+         $("#scoresList").empty();
     })
 
 // function endQuiz() {
