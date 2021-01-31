@@ -17,18 +17,21 @@
             </article>
         </section>
 
+        <!-- This section displays the quiz timer. -->
         <section class="row">
             <article id="timer">
                 <p>Timer: <span id="counter">0</span></p>
             </article>
         </section>
 
+        <!-- This section displays the user's current score. -->
         <section class="row">
             <article id="userScore">
                 <p>Current Score: <span id="score">0</span></p>
             </article>
         </section>
 
+        <!-- This section dislpays the quiz questions and answer choices, both of which are dynamically populated from the questionBank array in the JS file. -->
         <section class="row">
             <article id="quizContent">
                 <div id="questionContent"></div>
@@ -38,17 +41,19 @@
 
         <br>
 
+        <!-- These are the Start, Try Again, and View High Scores buttons. -->
         <button class="startBtn btn btn-primary">Start Quiz</button>
         <button class="resetQuiz btn btn-primary">Try Again</button>
         <button class="highScoreHistory btn btn-secondary">View High Scores</button>
        
-        
+        <!-- This is the section that provides user feedback on correct and incorrect answers. -->
         <section class="row">
             <article id="feedback">
                 <div id="validation"></div>
             </article>
         </section>
 
+        <!-- This is the form that allows users to enter their intials after taking the quiz. It is hidden until the quiz ends.-->
         <div class="hidden" id="userForm">
         <section class="row">
             <form class="col-md-3">
@@ -58,6 +63,13 @@
                 <button class="submitInitials btn btn-primary">Submit</button>
             </form>
         </section>
+        </div>
+
+        <!-- This section will display high scores. -->
+        <div>
+            <section class="row">
+
+            </section>
         </div>
 
     <script src="./assets/script.js"></script>

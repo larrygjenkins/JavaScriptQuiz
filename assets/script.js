@@ -142,11 +142,6 @@ $(".resetQuiz").on("click", function(){
     $("#score").text(currentScore);
  })
 
-// function enterInitials() {
-    
-//     console.log(userInitials.text);
-// }
-
 //When the user clicks the Submit button for intials, this event listener takes the current score and user inputed intials and adds them to the current array of high scores. 
 $(".submitInitials").on("click", function(event){
     event.preventDefault();
