@@ -24,6 +24,7 @@ var questionBank = [
     } 
 ]
 
+//This empty array will hold user initials and scores. 
 var highScores = []
 
 //This function displays the quiz questions.
@@ -93,14 +94,11 @@ $(".startBtn").on("click", function(){
 $(document).on("click", ".choice", function (){
     var choiceValue = $(this).val();
     
-    console.log("Choice: " + choiceValue);
-
     //if the user answers correctly, they see a validation message that it is correct and they receive 1 point.
     if (choiceValue === questionBank[questionCount].correctAnswer){
         $("#validation").text("Correct!");
         currentScore++;
         $("#score").text(currentScore);
-        console.log("current score: " + currentScore);
     } 
     
     //if the user answers incorrectly, they see "wrong" validation and lose 5 seconds from timer.
@@ -116,7 +114,6 @@ $(document).on("click", ".choice", function (){
     }
     //This updates the internal question count (the number of questions asked) by 1
     questionCount++;
-    console.log("Question Count: " + questionCount);
     clearQuestion();
 })
 
@@ -156,7 +153,6 @@ $(".submitInitials").on("click", function(event){
     //this creates the newScore variable, which is the object that will be pushed into the highScores array.
     var newScore = {"initials": userInitials.value, "score": newScore};
     highScores.push(newScore);
-    console.log(highScores);
 
     $("#questionContent").removeClass("done");
     $("#questionContent").text("");
@@ -189,14 +185,4 @@ $(".submitInitials").on("click", function(event){
          $("#scoresList").empty();
     })
 
-// function endQuiz() {
-//      //Assumes we have obtained initials from user and storing intials and score in an object; and then pushing to the high scores Array
-
-//      localStorage.setItem("highScores", JSON.stringify(highScores));
-
-// }
-//     endQuiz();
-//     var test = JSON.parse(localStorage.getItem("highScores"));
-//     console.log(test);
-
- });
+});
