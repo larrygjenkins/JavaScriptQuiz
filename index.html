@@ -38,14 +38,6 @@
 
         <br>
 
-        <form class="userInput" id="InitialsInput">
-            <div class="mb-3">
-              <label for="userIntials" class="form-label">Enter your initials</label>
-              <input type="text" class="form-control" id="userInitials">
-            </div>
-            <button type="submit" class="btn btn-primary playerInitials">Submit</button>
-          </form>
-
         <button class="startBtn btn btn-primary">Start Quiz</button>
         <button class="resetQuiz btn btn-primary">Try Again</button>
         <button class="highScoreHistory btn btn-secondary">View High Scores</button>
@@ -54,6 +46,16 @@
         <section class="row">
             <article id="feedback">
                 <div id="validation"></div>
+            </article>
+        </section>
+
+        <br>
+        <section class="row">
+            <article class="col-md-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <button class="submitInitials btn btn-primary">Submit</button>
             </article>
         </section>
 

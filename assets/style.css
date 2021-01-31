@@ -45,10 +45,6 @@ button {
 	display: none;
 }
 
-.userInput {
-	display: none;
-}
-
 /* These next two attributes are associated with a class. When the quiz starts, the Start button will be given the hidden class to change its display value. When the quiz ends, the display value for the Restart button will change. */
 .hidden {
 	display: none;
