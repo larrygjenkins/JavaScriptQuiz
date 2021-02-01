@@ -28,9 +28,11 @@ To provide question and answer choices for this quiz, a question bank array was 
 
 Global variables were also created for the quiz timer (timer), the number of questions asked (questionCount), and the user's current score (currentScore). 
 
-One of the challenges of this project was the dynamically populate question and answer choice content. This is necessary when the quiz starts and after the user answers each question.  
+### Dyanmically Populated Content
+One of the challenges of this project was the dynamically populate question and answer choice content. This is necessary when the quiz starts and after the user answers each question. Empty HTML elements served as placeholders for this content, and 
 
 **HTML elements for question and answer content**
+
     <section class="row">
             <article id="quizContent">
                 <div id="questionContent"></div>
@@ -39,6 +41,33 @@ One of the challenges of this project was the dynamically populate question and 
     </section>
 
 More text
+
+**Example**
+
+    function addContent() {
+   
+    if ((questionCount < questionBank.length) && (timer > 0)) {
+        $("#questionContent").text(questionBank[questionCount].question);
+
+        for (i = 0; i < questionBank[questionCount].answer.length; i++) {
+            var button = $("<button>");
+            button.text(questionBank[questionCount].answer[i]);
+            button.addClass("choice btn btn-secondary");
+            // button.addClass("btn btn-secondary");
+            button.val(questionBank[questionCount].answer[i])
+            $("#answerContent").append(button);
+        }
+    }
+
+    else {
+        $("#questionContent").text("The quiz is done! You scored " + currentScore + " points.");
+        $("#questionContent").addClass("done");
+        $("#answerContent").text("Enter your initials below.");
+        $("#answerContent").addClass("done");
+        $("#userForm").addClass("visible").removeClass("hidden");
+        timer = 0;
+    }
+}
 
 ## Location
 Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)

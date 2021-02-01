@@ -53,7 +53,6 @@ function addContent() {
         $("#userForm").addClass("visible").removeClass("hidden");
         timer = 0;
     }
-
 }
 
 // This event listens for users clicking the Start Quiz button.
@@ -110,8 +109,8 @@ $(document).on("click", ".choice", function (){
             else {
                 timer = 0;
             }
-        
     }
+
     //This updates the internal question count (the number of questions asked) by 1
     questionCount++;
     clearQuestion();
@@ -135,9 +134,11 @@ $(".resetQuiz").on("click", function(){
     $("#questionContent").text("");
     $("#answerContent").text("");
     $("#answerContent").removeClass("done");
+
     timer = 15;
     questionCount = 0;
     currentScore = 0;
+
     $("#counter").text(timer);
     $("#score").text(currentScore);
  })
