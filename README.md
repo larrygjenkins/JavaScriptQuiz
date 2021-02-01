@@ -31,7 +31,6 @@ Global variables were also created for the quiz timer (timer), the number of que
 One of the challenges of this project was the dynamically populate question and answer choice content. This is necessary when the quiz starts and after the user answers each question.  
 
 **HTML elements for question and answer content**
-
     <section class="row">
             <article id="quizContent">
                 <div id="questionContent"></div>
