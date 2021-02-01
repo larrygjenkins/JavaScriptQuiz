@@ -66,7 +66,12 @@ One of the challenges of this project was to dynamically populate question and a
 
 **Example of displayed question**
 
-<img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:200px;"/>
+<img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:400px;"/>
+
+### Recording User Initials
+When a user completes 
+
+### Viewing Scores
 
 ## Location
 Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)
