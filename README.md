@@ -64,7 +64,8 @@ One of the challenges of this project was to dynamically populate question and a
         timer = 0;
     }}
 
-MORE TEXT
+**Example of displayed question**
+
 <img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:200px;"/>
 
 ## Location
