@@ -65,6 +65,7 @@ One of the challenges of this project was to dynamically populate question and a
     }}
 
 MORE TEXT
+<img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:200px;"/>
 
 ## Location
 Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)
