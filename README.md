@@ -65,18 +65,18 @@ One of the challenges of this project was to dynamically populate question and a
     }}
 
 ### Recording User Initials
-When a user completes the quiz, they are prompted to enter their intials to track their progress against others. 
+When a user completes the quiz, they are prompted to enter their intials so they may track their progress against others. 
 
 <img src="./assets/images/quizDoneState.PNG" alt="end quiz prompt" style="width:400px;"/>
 
-text
+The intials input by the user, as well as their current quiz score, are recorded in a variable and pushed to the highScores array for later retrieval. 
 
     var newScore = {"initials": userInitials.value, "score": newScore};
     highScores.push(newScore);
 
-text
-
 ### Viewing Scores
+
+
 
 ## Location
 Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)
