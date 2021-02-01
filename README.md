@@ -26,25 +26,14 @@ To provide question and answer choices for this quiz, a question bank array was 
         correctAnswer: "a name and a value",
     },
 
-**Example of FOR Loop:** 
-
-    for (var i = 0; i < pwlength; i++) {
-    var max = (pwdcriteria.length);
-    var min = 0;
-    var char = (Math.floor(Math.random() * (max - min)) + min);
-    password = password + pwdcriteria[char];
-  }
-
-When the password is complete, it is passed to the designated text area (using the element's ID) within the index.html file. Some additional text was included in this area to indicate the collection of characters is the user's new password. 
-
 Global variables were also created for the quiz timer (timer), the number of questions asked (questionCount), and the user's current score (currentScore). 
 
 
 
 ## Location
-Use the following link to access the repository associated with this project: [Password Generator Repository](https://github.com/larrygjenkins/PasswordGenerator.git)
+Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)
 
-Use the following link to access the Password Generator application: [Password Generator Application](https://larrygjenkins.github.io/PasswordGenerator/)
+Use the following link to access the JavaScript Quiz application: [JavaScript Quiz](https://larrygjenkins.github.io/JavaScriptQuiz/)
 
 ## Example Images
 Following is an image of the password generator before a new password is created:
