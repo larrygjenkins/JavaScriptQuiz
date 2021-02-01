@@ -29,7 +29,7 @@ To provide question and answer choices for this quiz, a question bank array was 
 Global variables were also created for the quiz timer (timer), the number of questions asked (questionCount), and the user's current score (currentScore). 
 
 ### Dyanmically Populated Content
-One of the challenges of this project was the dynamically populate question and answer choice content. This is necessary when the quiz starts and after the user answers each question. Empty HTML elements served as placeholders for this content, and 
+One of the challenges of this project was to dynamically populate question and answer choice content. This is necessary when the quiz starts and after the user answers each question. Empty HTML elements served as placeholders for this content, and then jQuery selectors were used to target and place the necessary information.
 
 **HTML elements for question and answer content**
 
@@ -40,9 +40,7 @@ One of the challenges of this project was the dynamically populate question and 
             </article>
     </section>
 
-More text
-
-**Example**
+**Function used to add quiz content**
 
     function addContent() {
    
@@ -53,7 +51,6 @@ More text
             var button = $("<button>");
             button.text(questionBank[questionCount].answer[i]);
             button.addClass("choice btn btn-secondary");
-            // button.addClass("btn btn-secondary");
             button.val(questionBank[questionCount].answer[i])
             $("#answerContent").append(button);
         }
