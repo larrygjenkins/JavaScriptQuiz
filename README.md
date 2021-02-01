@@ -66,10 +66,12 @@ One of the challenges of this project was to dynamically populate question and a
 
 **Example of displayed question**
 
-<img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:400px; border:solid;"/>
+<img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:400px;"/>
 
 ### Recording User Initials
-When a user completes 
+When a user completes the quiz, they are prompted to enter their intials to track their progress against others. 
+
+<img src="./assets/images/quizDoneState.PNG" alt="end quiz prompt" style="width:400px;"/>
 
 ### Viewing Scores
 
