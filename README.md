@@ -19,11 +19,23 @@ To provide question and answer choices for this quiz, a question bank array was 
 * correctAnswer
 
 **Example of a question object Loop:** 
-{
-    question:  "Variables are made up of:",
-    answer: ["a vowel and consonant", "an object and a location", "a name and a value"],
-    correctAnswer: "a name and a value",
+
+    {
+        question:  "Variables are made up of:",
+        answer: ["a vowel and consonant", "an object and a location", "a name and a value"],
+        correctAnswer: "a name and a value",
     },
+
+**Example of FOR Loop:** 
+
+    for (var i = 0; i < pwlength; i++) {
+    var max = (pwdcriteria.length);
+    var min = 0;
+    var char = (Math.floor(Math.random() * (max - min)) + min);
+    password = password + pwdcriteria[char];
+  }
+
+When the password is complete, it is passed to the designated text area (using the element's ID) within the index.html file. Some additional text was included in this area to indicate the collection of characters is the user's new password. 
 
 Global variables were also created for the quiz timer (timer), the number of questions asked (questionCount), and the user's current score (currentScore). 
 
