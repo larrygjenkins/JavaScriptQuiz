@@ -24,11 +24,22 @@ To provide question and answer choices for this quiz, a question bank array was 
         question:  "Variables are made up of:",
         answer: ["a vowel and consonant", "an object and a location", "a name and a value"],
         correctAnswer: "a name and a value",
-    },
+    }
 
 Global variables were also created for the quiz timer (timer), the number of questions asked (questionCount), and the user's current score (currentScore). 
 
+One of the challenges of this project was the dynamically populate question and answer choice content. This is necessary when the quiz starts and after the user answers each question.  
 
+**HTML elements for question and answer content**
+
+    <section class="row">
+            <article id="quizContent">
+                <div id="questionContent"></div>
+                <div id="answerContent"></div>
+            </article>
+    </section>
+
+More text
 
 ## Location
 Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)
