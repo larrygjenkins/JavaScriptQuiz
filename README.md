@@ -53,8 +53,7 @@ One of the challenges of this project was to dynamically populate question and a
             button.addClass("choice btn btn-secondary");
             button.val(questionBank[questionCount].answer[i])
             $("#answerContent").append(button);
-        }
-    }
+        }}
 
     else {
         $("#questionContent").text("The quiz is done! You scored " + currentScore + " points.");
@@ -63,8 +62,9 @@ One of the challenges of this project was to dynamically populate question and a
         $("#answerContent").addClass("done");
         $("#userForm").addClass("visible").removeClass("hidden");
         timer = 0;
-    }
-}
+    }}
+
+MORE TEXT
 
 ## Location
 Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)
