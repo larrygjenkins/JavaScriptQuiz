@@ -66,7 +66,7 @@ One of the challenges of this project was to dynamically populate question and a
 
 **Example of displayed question**
 
-<img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:400px;"/>
+<img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:400px; border:solid;"/>
 
 ### Recording User Initials
 When a user completes 
