@@ -75,8 +75,13 @@ The intials input by the user, as well as their current quiz score, are recorded
     highScores.push(newScore);
 
 ### Viewing Scores
+When the user elects to review 
 
+text
 
+<img src="./assets/images/quizViewScores.PNG" alt="quiz high scores" style="width:400px;"/>
+
+text
 
 ## Location
 Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)
