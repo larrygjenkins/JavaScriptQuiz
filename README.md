@@ -64,10 +64,6 @@ One of the challenges of this project was to dynamically populate question and a
         timer = 0;
     }}
 
-**Example of displayed question**
-
-<img src="./assets/images/quizExampleQuestion.PNG" alt="example question" style="width:400px;"/>
-
 ### Recording User Initials
 When a user completes the quiz, they are prompted to enter their intials to track their progress against others. 
 
