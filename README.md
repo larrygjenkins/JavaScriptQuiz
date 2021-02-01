@@ -75,24 +75,27 @@ The intials input by the user, as well as their current quiz score, are recorded
     highScores.push(newScore);
 
 ### Viewing Scores
-When the user elects to review 
-
-text
+Before retaking the quiz, a user has the option to review recorded scores.
 
 <img src="./assets/images/quizViewScores.PNG" alt="quiz high scores" style="width:400px;"/>
 
-text
+Like the question and answer choice content, this list of scores is also dynamically generated, based on the data available within the highScores array. An empty unordered list element is present within the index.html file, and a list item is appended to this element for every pair of intials and score. 
 
-## Location
+    for (i = 0; i < highScores.length; i++) {
+            $("#scoresList").append("<li>" + highScores[i].initials + ": " + highScores[i].score + " points");
+        }
+
+When the user hides the score list, the unordered list is emptied, and a "hidden" class is added to the div that would contain this content. 
+
+    $(".hideScores").on("click", function(){
+         $("#highScoresBox").addClass("hidden").removeClass("visible");
+         $(".highScoreHistory").addClass("visible").removeClass("hidden");
+         $("#scoresList").empty();
+    })
+
+This adding and removing of hidden/visible classes is used throughout the application to control the display properties of various html elements. 
+
+## Repository and Application Locations
 Use the following link to access the repository associated with this project: [JavaScript Repository](https://github.com/larrygjenkins/JavaScriptQuiz.git)
 
 Use the following link to access the JavaScript Quiz application: [JavaScript Quiz](https://larrygjenkins.github.io/JavaScriptQuiz/)
-
-## Example Images
-Following is an image of the password generator before a new password is created:
-
-![Password Generator application before new password created](./images/PasswordGeneratorBeforeImage.PNG)
-
-Following is an image of the password generator after a new password is created:
-
-![Password Generator application after new password created](./images/PasswordGeneratorAfterImage.PNG)
